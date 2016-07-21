@@ -5,6 +5,7 @@ RSpec.describe Parser do
   let(:inputpipe) { "Dalin | Robert | Male | Blue | 12/05/1995" }
   let(:result) { ["Dalin", "Robert", "Male", "Blue", "12/05/1995"] }
 
+
   it "should parse input with commas" do 
     expect(Parser.parse(inputcomma)).to eq(result)
   end
