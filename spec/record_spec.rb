@@ -1,7 +1,7 @@
 require_relative './spec_helper'
 
-RSpec.describe Record do 
+RSpec.describe FileSystem::Record do 
   it "creates a blank record" do 
-    record = Record.new
+    record = FileSystem::Record.new
   end
 end

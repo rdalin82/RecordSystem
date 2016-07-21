@@ -1,2 +1,4 @@
-class Record
+module FileSystem
+  class Record
+  end
 end
