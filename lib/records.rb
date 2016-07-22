@@ -1,4 +1,4 @@
-module FileSystem
+module RecordSystem
   class Files
   end
 end
