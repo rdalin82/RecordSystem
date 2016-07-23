@@ -4,29 +4,29 @@ RSpec.describe RecordSystem::Record do
   #refactor to record instead of input
   let(:inputcomma) { "Dalin, Robert, Male, Blue, 12/05/1995" }
   let(:inputpipe) { "Dalin | Robert | Male | Blue | 12/05/1995" }
+  let(:recordcomma) { RecordSystem::Record.new(inputcomma) }
+  let(:recordpipe) { RecordSystem::Record.new(inputpipe) }
   context "with commas" do 
     it "creates a new record" do 
       record = RecordSystem::Record.new(inputcomma)
     end
     it "creates a new record and has a last name" do 
-      record = RecordSystem::Record.new(inputcomma)
-      expect(record.last_name).to eq("Dalin")
+      expect(recordcomma.last_name).to eq("Dalin")
     end
     it "creates a new record and has a first name" do 
-      record = RecordSystem::Record.new(inputcomma)
-      expect(record.first_name).to eq("Robert")
+      expect(recordcomma.first_name).to eq("Robert")
     end
     it "creates a new record and has a gender" do 
-      record = RecordSystem::Record.new(inputcomma)
-      expect(record.gender).to eq("Male")
+      expect(recordcomma.gender).to eq("Male")
     end
     it "creates a new record and has a favorite color" do 
-      record = RecordSystem::Record.new(inputcomma)
-      expect(record.favorite_color).to eq("Blue")
+      expect(recordcomma.favorite_color).to eq("Blue")
     end
     it "creates a new record and has a birthday" do 
-      record = RecordSystem::Record.new(inputcomma)
-      expect(record.date_of_birth).to eq("12/05/1995")
+      expect(recordcomma.date_of_birth).to eq("12/05/1995")
+    end
+    it "can property write the record which is the same as input with a new line" do 
+      expect(recordcomma.write).to eq(inputcomma+"\n")
     end
   end
   context "with pipes" do 
@@ -34,24 +34,22 @@ RSpec.describe RecordSystem::Record do
       record = RecordSystem::Record.new(inputpipe)
     end
     it "creates a new record and has a last name" do 
-      record = RecordSystem::Record.new(inputpipe)
-      expect(record.last_name).to eq("Dalin")
+      expect(recordpipe.last_name).to eq("Dalin")
     end
     it "creates a new record and has a first name" do 
-      record = RecordSystem::Record.new(inputpipe)
-      expect(record.first_name).to eq("Robert")
+      expect(recordpipe.first_name).to eq("Robert")
     end
     it "creates a new record and has a gender" do 
-      record = RecordSystem::Record.new(inputpipe)
-      expect(record.gender).to eq("Male")
+      expect(recordpipe.gender).to eq("Male")
     end
     it "creates a new record and has a favorite color" do 
-      record = RecordSystem::Record.new(inputpipe)
-      expect(record.favorite_color).to eq("Blue")
+      expect(recordpipe.favorite_color).to eq("Blue")
     end
     it "creates a new record and has a birthday" do 
-      record = RecordSystem::Record.new(inputpipe)
-      expect(record.date_of_birth).to eq("12/05/1995")
+      expect(recordpipe.date_of_birth).to eq("12/05/1995")
+    end
+    it "can property write the record which is the same as input with a new line" do
+      expect(recordpipe.write).to eq(inputcomma+"\n")
     end
   end
 end
