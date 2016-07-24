@@ -1,9 +1,9 @@
 require_relative './spec_helper'
 
 RSpec.describe RecordSystem::Parser do 
-  let(:inputcomma) { "Dalin, Robert, Male, Blue, 12/05/1995" }
-  let(:inputpipe) { "Dalin | Robert | Male | Blue | 12/05/1995" }
-  let(:result) { ["Dalin", "Robert", "Male", "Blue", "12/05/1995"] }
+  let(:inputcomma) { "Raynor, Cayla, Male, White, 05/17/1988" }
+  let(:inputpipe) { "Raynor | Cayla | Male | White | 05/17/1988" }
+  let(:result) { ["Raynor", "Cayla", "Male", "White", "05/17/1988"] }
 
   it "should parse input with commas" do 
     expect(RecordSystem::Parser.parse(inputcomma)).to eq(result)
