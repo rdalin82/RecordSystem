@@ -6,8 +6,9 @@ module RecordSystem
     def self.append(input, **args)
       @@source = args[:source] ||= file_source
       @@record = args[:record] ||= Record
+      @@parser = args[:parser] ||= Parser
       File.open(@@source, 'a') do |file|
-        file.puts @@record.new(input).write 
+        file.puts @@record.new(input, :parser=>@@parser).write 
         file.close
       end
     end
