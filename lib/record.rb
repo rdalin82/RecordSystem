@@ -11,8 +11,22 @@ module RecordSystem
       @favorite_color = input_array[3]
       @date_of_birth = dob(input_array[4])      
     end
+    def to_s
+      "#{@last_name}, #{@first_name}, #{@gender}, #{@favorite_color}, #{display_dob}"
+    end
+    def to_h
+      { "#{@first_name[0]+@last_name}": 
+        {
+          last_name: @last_name,
+          first_name: @first_name,
+          gender: @gender,
+          color: @favorite_color,
+          birthdate: display_dob 
+        }
+      }
+    end
     def write
-      "#{@last_name}, #{@first_name}, #{@gender}, #{@favorite_color}, #{display_dob}\n"
+      "#{@last_name}, #{@first_name}, #{@gender}, #{@favorite_color}, #{display_dob}"
     end
     def dob(dob_input)
       dob = dob_input.split("/").map { |x| x.to_i } #[month, day, year]

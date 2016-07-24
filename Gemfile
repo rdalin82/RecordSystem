@@ -1,2 +1,5 @@
 source 'http://rubygems.org'
+ruby '2.2.4'
 gem 'rspec', '>=3.4.0'
+gem 'grape', '0.16.2'
+gem 'rack-test'
