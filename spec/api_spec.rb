@@ -2,6 +2,11 @@ require_relative './spec_helper'
 
 RSpec.describe RecordSystem::API do 
   include Rack::Test::Methods
+  after(:all) do
+    file = File.open(File.expand_path("../data/records.csv", File.dirname(__FILE__)), 'w')
+    file.write("")
+    file.close
+  end
 
   def app
     RecordSystem::API
