@@ -4,13 +4,16 @@ Ruby application that reads a csv or text file that is comma or pipe delimited a
 
 ### Example inputs 
 ``` LastName | FirstName | Gender | Color | DateofBirth #mm/dd/yyyy formart ```
+
 ``` LastName, FirstName, Gender, Color, DateofBirth #mm/dd/yyyy formart ```
 
 # Examples 
 
 ## Reading and Sorting 
 ``` RecordSystem::RecordReader.load.sort(&:by_last_name) #reads file and sorts an array by last name descending ```
+
 ``` RecordSystem::RecordReader.load.sort(&:by_gender) #reads file and sorts an array by gender then last name ascending ```
+
 ``` RecordSystem::RecordReader.load.sort(&:by_date) #reads file and sorts by an array by date of birth ```
 
 ## Writing to file
