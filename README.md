@@ -3,9 +3,9 @@
 Ruby application that reads a csv or text file that is comma or pipe delimited and can sort them by last name in descending order, date of birth by ascending, or by gender ascending then by last name ascending order.  New entries are written to a csv file located at ./data/records.csv by default, however you may pass the append method a hash of :source=>your_file as an option
 
 ### Example inputs 
-``` LastName | FirstName | Gender | Color | DateofBirth #mm/dd/yyyy formart ```
+``` LastName | FirstName | Gender | Color | DateofBirth #mm/dd/yyyy format ```
 
-``` LastName, FirstName, Gender, Color, DateofBirth #mm/dd/yyyy formart ```
+``` LastName, FirstName, Gender, Color, DateofBirth #mm/dd/yyyy format ```
 
 # Examples 
 
