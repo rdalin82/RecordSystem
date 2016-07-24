@@ -6,7 +6,7 @@ RSpec.describe RecordSystem::API do
   def app
     RecordSystem::API
   end
-
+  
   context "Get records" do 
     it "by gender" do
       get '/records/gender'
