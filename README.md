@@ -12,7 +12,7 @@ Ruby application that reads a csv or text file that is comma or pipe delimited a
 
 ### To Start
 
-``` rackup ``` 
+```$ rackup ``` 
 
 The api responds to 1 POST call and 3 GET calls that return JSON data. 
 
@@ -28,11 +28,11 @@ The api responds to 1 POST call and 3 GET calls that return JSON data.
 
 POST new entry: ``` curl -d '{"text": "Thompson, Althea, Female, Gray, 09/28/1981"}' 'http://localhost:9292/' -H Content-Type:application/json -v ``` 
 
-Get records by gender: ``` curl http://localhost:9292/records/gender ```
+GET records by gender: ``` curl http://localhost:9292/records/gender ```
 
-Get records by last name descending order: ``` curl http://localhost:9292/records/name ```
+GET records by last name descending order: ``` curl http://localhost:9292/records/name ```
 
-Get records by birthdate: ``` curl http://localhost:9292/records/birthdate ```
+GET records by birthdate: ``` curl http://localhost:9292/records/birthdate ```
 
 ## Reading and Sorting 
 
@@ -50,4 +50,4 @@ Optionally you can pass a hash of arguments ``` {:source=>file_source, :parser=>
 
 ## To run tests:
  
-``` rake ```
+```$ rake ```

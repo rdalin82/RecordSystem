@@ -2,11 +2,6 @@ require_relative './spec_helper'
 
 RSpec.describe RecordSystem::API do 
   include Rack::Test::Methods
-  after(:all) do
-    file = File.open(File.expand_path("../data/records.csv", File.dirname(__FILE__)), 'w')
-    file.write("")
-    file.close
-  end
 
   def app
     RecordSystem::API
@@ -27,6 +22,16 @@ RSpec.describe RecordSystem::API do
     end
   end
   context "Post a new Record" do 
+    after(:context) do
+      file = File.open(File.expand_path("../data/records.csv", File.dirname(__FILE__)), 'w+')
+      remainder = file.readlines.pop 
+      if !remainder.nil? 
+        remainder.each do |line|
+          file.puts line 
+        end
+      end
+      file.close
+    end
     it "adds a new record" do 
       post '/', '{"text": "Thompson, Althea, Female, Gray, 09/28/1981"}', 'CONTENT_TYPE' => 'application/json'
       expect(last_response.status).to eq(201)
