@@ -22,17 +22,8 @@ RSpec.describe RecordSystem::API do
     end
   end
   context "Post a new Record" do 
-    after(:context) do
-      file = File.open(File.expand_path("../data/records.csv", File.dirname(__FILE__)), 'w+')
-      remainder = file.readlines.pop 
-      if !remainder.nil? 
-        remainder.each do |line|
-          file.puts line 
-        end
-      end
-      file.close
-    end
     it "adds a new record" do 
+      allow(RecordSystem::RecordWriter).to receive(:append)
       post '/', '{"text": "Thompson, Althea, Female, Gray, 09/28/1981"}', 'CONTENT_TYPE' => 'application/json'
       expect(last_response.status).to eq(201)
     end
