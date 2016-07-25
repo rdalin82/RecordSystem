@@ -5,6 +5,7 @@ require './lib/record'
 require './lib/record_reader'
 require './lib/record_writer'
 require './lib/record_system'
+require './lib/validator'
 
 module RecordSystem
   class API < Grape::API 

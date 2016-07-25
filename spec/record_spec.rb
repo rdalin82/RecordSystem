@@ -55,14 +55,14 @@ RSpec.describe RecordSystem::Record do
   context "with wrong data format" do 
     let(:invalidinput) { "Raynor, Cayla, Male, White, 05-17-1988" }
     let(:invalidinput2) { "Raynor, Cayla, Male, White, 05 17 1988" }
-    let(:invalidinput3) { "Raynor, Cayla, Male, White, " }
+    let(:invalidinput3) { "Raynor, Cayla, Male, White" }
     let(:invalidinput4) { "" }
 
     it "should raise an error" do 
-      expect{ RecordSystem::Record.new(invalidinput) }.to raise_error(ArgumentError)
-      expect{ RecordSystem::Record.new(invalidinput2) }.to raise_error(ArgumentError)
-      expect{ RecordSystem::Record.new(invalidinput3)}.to raise_error(ArgumentError)
-      expect { RecordSystem::Record.new(invalidinput4).to raise_error(ArgumentError) }
+      expect{ RecordSystem::Record.new(invalidinput) }.to raise_error(NameError)
+      expect{ RecordSystem::Record.new(invalidinput2) }.to raise_error(NameError)
+      expect{ RecordSystem::Record.new(invalidinput3) }.to raise_error(ArgumentError)
+      expect{ RecordSystem::Record.new(invalidinput4) }.to raise_error(ArgumentError) 
     end
   end
 
