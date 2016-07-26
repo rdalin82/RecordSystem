@@ -27,6 +27,9 @@ module RecordSystem
         }
       }
     end
+    def to_s
+      "#{@last_name}, #{@first_name}, #{@gender}, #{@favorite_color}, #{display_dob}"
+    end
     def write
       "#{@last_name}, #{@first_name}, #{@gender}, #{@favorite_color}, #{display_dob}"
     end
