@@ -7,11 +7,14 @@ module RecordSystem
       @validator = args[:validator] ||= Validator.new
       input_array = @parser.parse(input)
       @validator.validate_length(input_array, 5)
+      input_assignment(input_array)
+    end
+    def input_assignment(input_array)
       @last_name = input_array[0]
       @first_name = input_array[1]
       @gender = input_array[2]
       @favorite_color = input_array[3]
-      @date_of_birth = dob(input_array[4])      
+      @date_of_birth = dob(input_array[4]) 
     end
     def to_h
       { "#{@first_name[0]+@last_name}": 
