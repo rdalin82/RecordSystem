@@ -26,7 +26,7 @@ The API responds to 1 POST call and 3 GET calls that return JSON data.
 
 ### Examples of API calls 
 
-POST new entry: ``` curl -d '{"text": "Thompson, Althea, Female, Gray, 09/28/1981"}' 'http://localhost:9292/' -H Content-Type:application/json -v ``` 
+POST new entry: ``` curl -d '{"text": "Thompson, Althea, Female, Gray, 09/28/1981"}' 'http://localhost:9292/records' -H Content-Type:application/json -v ``` 
 
 GET records by gender: ``` curl http://localhost:9292/records/gender ```
 
