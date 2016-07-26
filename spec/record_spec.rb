@@ -65,7 +65,6 @@ RSpec.describe RecordSystem::Record do
       expect{ RecordSystem::Record.new(invalidinput4) }.to raise_error(ArgumentError) 
     end
   end
-
   context "sorting records" do 
     let(:record1) { RecordSystem::Record.new("Raynor, Cayla, Male, White, 05/17/1988") }
     let(:record2) { RecordSystem::Record.new("Thompson, Althea, Female, Gray, 09/28/1981") }
