@@ -13,6 +13,7 @@ Ruby application that reads a csv or text file that is comma or pipe delimited a
 Takes incoming text files and writes them to an output file in coma separated values.  
 
 Usage: ```$ ruby file_reader.rb [input file] [output destination] ```
+
 example: ```$ ruby file_reader.rb testcoma.txt ./data/test.txt ```
 
 ### Sample Output 
@@ -95,12 +96,17 @@ GET records by last name descending order: ``` curl http://localhost:9292/record
 GET records by birthdate: ``` curl http://localhost:9292/records/birthdate ```
 
 ## Reading and Sorting 
+reads file and sorts an array by last name descending
 
-``` RecordSystem::RecordReader.load.sort(&:by_last_name) #reads file and sorts an array by last name descending ```
+``` RecordSystem::RecordReader.load.sort(&:by_last_name)  ```
 
-``` RecordSystem::RecordReader.load.sort(&:by_gender) #reads file and sorts an array by gender then last name ascending ```
+reads file and sorts an array by gender then last name ascending
 
-``` RecordSystem::RecordReader.load.sort(&:by_date) #reads file and sorts by an array by date of birth ```
+``` RecordSystem::RecordReader.load.sort(&:by_gender) ```
+
+reads file and sorts by an array by date of birth
+
+``` RecordSystem::RecordReader.load.sort(&:by_date)  ```
 
 Optionally you can pass a hash of arguments ``` {:source=>file_source, :record=>recordClass} ``` to #load
 
