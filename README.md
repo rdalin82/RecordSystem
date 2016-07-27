@@ -1,6 +1,6 @@
 # Record System 
 
-Ruby application that reads a csv or text file that is comma or pipe delimited and can sort them by last name in descending order, date of birth by ascending, or by gender ascending then by last name ascending order.  New entries are written to a csv file located at ./data/records.csv by default.
+Ruby application that reads a csv or text file that is comma or pipe delimited and can sort them by last name in descending order, date of birth by ascending, or by gender and then by last name ascending order.  New entries are written to a csv file located at ./data/records.csv by default.
 
 ### Example inputs 
 
@@ -12,36 +12,59 @@ Ruby application that reads a csv or text file that is comma or pipe delimited a
 
 Takes incoming text files and writes them to an output file in coma separated values.  
 
-Usage: ``` ruby file_reader.rb [input file] [output destination] ```
-example ``` ruby file_reader.rb testcoma.txt ./data/test.txt ```
+Usage: ```$ ruby file_reader.rb [input file] [output destination] ```
+example: ```$ ruby file_reader.rb testcoma.txt ./data/test.txt ```
 
 ### Sample Output 
 
 By Gender
+
 Dare, Rose, Female, Red, 05/28/1986
+
 Hintz, Vinnie, Female, Gray, 08/11/1982
+
 Orn, Cindy, Female, White, 06/04/1985
+
 Thompson, Althea, Female, Gray, 09/28/1981
+
 Raynor, Cayla, Male, White, 05/17/1988
+
 Waelchi, Alan, Male, Gray, 07/03/1989
+
 Wolf, Diego, Male, White, 01/29/1988
+
 
 By Last Name
+
 Wolf, Diego, Male, White, 01/29/1988
+
 Waelchi, Alan, Male, Gray, 07/03/1989
+
 Thompson, Althea, Female, Gray, 09/28/1981
+
 Raynor, Cayla, Male, White, 05/17/1988
+
 Orn, Cindy, Female, White, 06/04/1985
+
 Hintz, Vinnie, Female, Gray, 08/11/1982
+
 Dare, Rose, Female, Red, 05/28/1986
 
+
 By Birthdate
+
 Thompson, Althea, Female, Gray, 09/28/1981
+
 Hintz, Vinnie, Female, Gray, 08/11/1982
+
 Orn, Cindy, Female, White, 06/04/1985
+
 Dare, Rose, Female, Red, 05/28/1986
+
 Wolf, Diego, Male, White, 01/29/1988
+
 Raynor, Cayla, Male, White, 05/17/1988
+
 Waelchi, Alan, Male, Gray, 07/03/1989
 
 
