@@ -5,8 +5,8 @@ require './lib/record_writer'
 require './lib/record_system'
 require './lib/validator'
 
-incoming_file = ARGV[0] ||= './data/records.csv'
-destination_file = ARGV[1] ||= './data/records.csv'
+incoming_file = ARGV[0] 
+destination_file = ARGV[1] 
 
 input = File.open(incoming_file, 'r')
 while !input.eof? 
