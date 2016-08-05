@@ -3,12 +3,12 @@ module RecordSystem
     def self.file_source
       File.expand_path("../data/records.csv", File.dirname(__FILE__))
     end
-    def self.append(input, **args)
-      source = args[:source] ||= file_source
-      record = args[:record] ||= Record
-      parser = args[:parser] ||= Parser
+    def self.append(input)
+      settings = Settings.new
+      source = settings.source
+      record = settings.record
       File.open(source, 'a+') do |file|
-        file.puts record.new(input, :parser=>parser).write 
+        file.puts record.new(input).write 
       end
     end
   end

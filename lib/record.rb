@@ -2,9 +2,10 @@ require 'date'
 module RecordSystem
   class Record
     attr_reader :last_name, :first_name, :gender, :favorite_color, :date_of_birth
-    def initialize(input, **args)
-      @parser = args[:parser] ||= Parser
-      @validator = args[:validator] ||= Validator.new
+    def initialize(input)
+      settings = Settings.new
+      @parser = settings.parser
+      @validator = settings.validator
       input_array = @parser.parse(input)
       @validator.validate_length(input_array, 5)
       input_assignment(input_array)
