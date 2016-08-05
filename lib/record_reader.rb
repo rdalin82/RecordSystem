@@ -1,8 +1,5 @@
 module RecordSystem
   class RecordReader
-    def self.file_source
-      File.expand_path("../data/records.csv", File.dirname(__FILE__))
-    end
     def self.load()
       settings = Settings.new
       source = settings.source

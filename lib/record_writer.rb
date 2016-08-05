@@ -1,8 +1,5 @@
 module RecordSystem
   class RecordWriter
-    def self.file_source
-      File.expand_path("../data/records.csv", File.dirname(__FILE__))
-    end
     def self.append(input)
       settings = Settings.new
       source = settings.source
